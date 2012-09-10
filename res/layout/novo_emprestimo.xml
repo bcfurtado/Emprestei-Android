@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wood_panel"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textViewCadastrarEmprestimo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Cadastrar Emprestimo"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:padding="5dp" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"  >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:padding="5dp" >
+            
+            <TextView
+                android:id="@+id/textViewContato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Selecionar Contato"
+                android:padding="5dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextViewContato"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:padding="5dp"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/textViewObjeto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Objeto"
+        android:padding="5dp" />
+
+    <EditText
+        android:id="@+id/editTextObjeto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/textViewObservacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Observação"
+        android:padding="5dp" />
+
+    <EditText
+        android:id="@+id/editTextObservacao"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textMultiLine"
+        android:lines="3" />
+
+    <TextView
+        android:id="@+id/textViewDevolucao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Devolução"
+        android:padding="5dp"  />
+
+    <DatePicker
+        android:id="@+id/datePickerDevolucao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"  />
+
+    <Button
+        android:id="@+id/buttonCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:padding="5dp"  />
+    
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
