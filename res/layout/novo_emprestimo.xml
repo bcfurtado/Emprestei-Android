@@ -6,6 +6,7 @@
     android:orientation="vertical" >
 
     <TextView
+        style="@style/EmpresteiAndroid.TextView"
         android:id="@+id/textViewCadastrarEmprestimo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
             android:padding="5dp" >
             
             <TextView
+                style="@style/EmpresteiAndroid.TextView"
                 android:id="@+id/textViewContato"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,6 +45,7 @@
         android:singleLine="true"/>
 
     <TextView
+        style="@style/EmpresteiAndroid.TextView"
         android:id="@+id/textViewObjeto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,6 +62,7 @@
     </EditText>
 
     <TextView
+        style="@style/EmpresteiAndroid.TextView"
         android:id="@+id/textViewObservacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,6 +78,7 @@
         android:lines="3" />
 
     <TextView
+        style="@style/EmpresteiAndroid.TextView"
         android:id="@+id/textViewDevolucao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

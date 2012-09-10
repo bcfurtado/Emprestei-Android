@@ -6,6 +6,7 @@
     android:background="@drawable/wood_panel" >
 
     <TextView
+        style="@style/EmpresteiAndroid.TextView"
         android:id="@+id/textViewVisualizarEmprestimo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,6 +15,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageView
+        style="@style/EmpresteiAndroid.TextView"
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,6 +28,7 @@
         android:orientation="horizontal" >
 
         <TextView
+            style="@style/EmpresteiAndroid.TextView"
             android:id="@+id/textViewContato"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,6 +38,7 @@
             android:text="Contato" />
 
         <TextView
+            style="@style/EmpresteiAndroid.TextView"
             android:id="@+id/textViewContatoEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,6 +54,7 @@
         android:orientation="horizontal" >
 
         <TextView
+            style="@style/EmpresteiAndroid.TextView"
             android:id="@+id/textViewObjeto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,6 +64,7 @@
             android:text="Objeto" />
 
         <TextView
+            style="@style/EmpresteiAndroid.TextView"
             android:id="@+id/textViewObjetoEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,6 +80,7 @@
         android:orientation="horizontal" >
 
         <TextView
+            style="@style/EmpresteiAndroid.TextView"
             android:id="@+id/textViewDtDevolucao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,6 +90,7 @@
             android:text="Devolução" />
 
         <TextView
+            style="@style/EmpresteiAndroid.TextView"
             android:id="@+id/textViewDtDevolucaoEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,6 +101,7 @@
     </LinearLayout>
 
     <TextView
+        style="@style/EmpresteiAndroid.TextView"
         android:id="@+id/textViewObservacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -101,6 +110,7 @@
         android:text="Observação" />
 
     <TextView
+        style="@style/EmpresteiAndroid.TextView"
         android:id="@+id/TextViewObservacaoEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

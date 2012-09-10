@@ -6,6 +6,7 @@
     android:orientation="vertical" >
 
     <TextView
+        style="@style/EmpresteiAndroid.TextView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -13,6 +14,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView
+        style="@style/EmpresteiAndroid.TextView"
         android:id="@+id/listViewObjetosEmprestados"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
