@@ -57,6 +57,7 @@
         android:id="@+id/editTextObjeto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textCapCharacters"
         android:ems="10" >
 
     </EditText>

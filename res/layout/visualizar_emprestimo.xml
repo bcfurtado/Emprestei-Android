@@ -14,11 +14,21 @@
         android:text="Visualizar Emprestimo"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <ImageView
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:orientation="vertical">
+                <ImageView
         style="@style/EmpresteiAndroid.TextView"
         android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
         android:padding="5dp"
         android:src="@drawable/ic_launcher" />
 
@@ -114,9 +124,8 @@
         android:id="@+id/TextViewObservacaoEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1.39"
         android:gravity="center"
-        android:padding="5dp"
+        android:padding="15dp"
         android:text="Observação Nome" />
 
     <Button
@@ -130,5 +139,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ver Informações do Contato" />
+        </LinearLayout>
+    </ScrollView>
+
+
 
 </LinearLayout>

@@ -5,16 +5,17 @@ import java.text.SimpleDateFormat;
 import com.bcfurtado.EmpresteiAndroid.R;
 import com.bcfurtado.EmpresteiAndroid.bean.Emprestimo;
 import com.bcfurtado.EmpresteiAndroid.db.ControladorDB;
+import com.bcfurtado.EmpresteiAndroid.util.FotoContato;
 
-import android.R.dimen;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class VisualizarEmprestimo extends Activity {
@@ -34,6 +35,8 @@ public class VisualizarEmprestimo extends Activity {
 		TextView objeto = (TextView)findViewById(R.id.textViewObjetoEdit);
 		TextView observacao = (TextView)findViewById(R.id.TextViewObservacaoEdit);
 		TextView dt_devolucao = (TextView)findViewById(R.id.textViewDtDevolucaoEdit);
+		
+		ImageView foto_contato = (ImageView)findViewById(R.id.imageView1);
 		
 		Bundle parametros = getIntent().getExtras();
 		
@@ -59,6 +62,11 @@ public class VisualizarEmprestimo extends Activity {
 					observacao.setText(emprestimo.getObservacao());
 				}
 				
+				//Bitmap foto = new FotoContato().pegar_foto(this.getContentResolver(), emprestimo.getContato());
+				Bitmap foto = FotoContato.pegar_foto(this.getContentResolver(), emprestimo.getContato());
+				
+				if ( foto != null ) {
+					foto_contato.setImageBitmap(foto);				}
 			}
 			
 		}
@@ -91,6 +99,7 @@ public class VisualizarEmprestimo extends Activity {
 				
 			}
 				
-		});
+		});		
 	}
+	
 }

@@ -3,10 +3,12 @@ package com.bcfurtado.EmpresteiAndroid.util;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bcfurtado.EmpresteiAndroid.R;
@@ -45,9 +47,14 @@ public class AdpterCustom extends BaseAdapter {
 		
 		TextView nomeObjeto = (TextView)view.findViewById(R.id.textViewObjeto);
 		TextView nomeContato = (TextView)view.findViewById(R.id.textViewContato);
+		ImageView foto = (ImageView)view.findViewById(R.id.imageViewContato);
 		
 		nomeObjeto.setText(e.getObjeto());
 		nomeContato.setText(e.getContato());
+		Bitmap bm = FotoContato.pegar_foto(context.getContentResolver(), e.getContato());
+		if ( bm != null ) {
+			foto.setImageBitmap(bm);
+		}
 		
 		return view;
 	}
