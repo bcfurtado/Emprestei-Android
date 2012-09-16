@@ -48,26 +48,6 @@ public class DBHelper extends SQLiteOpenHelper {
 		
 		db.execSQL(sql);
 		
-		
-//		ContentValues values = new ContentValues();
-//		
-//		values.put("contato" , "Nico Cavalera");
-//		values.put("objeto" , "Diablo 3" );
-//		values.put("observacao",	"Sem Arranhões" );
-//		values.put("dt_emprestimo",	"2012-01-01" );
-//		values.put("dt_devolucao", "2012-01-03");
-//
-//		db.insert(this.NOME_TABELA, null, values);
-//		
-//		values = new ContentValues();
-//		
-//		values.put("contato" , "Bruno Furtado");
-//		values.put("objeto" , "Cabo HDMI" );
-//		values.put("dt_emprestimo",	"2012-01-02" );
-//		values.put("dt_devolucao", "2012-01-04");
-//
-//		db.insert(this.NOME_TABELA, null, values);
-
 	}
 
 	@Override
