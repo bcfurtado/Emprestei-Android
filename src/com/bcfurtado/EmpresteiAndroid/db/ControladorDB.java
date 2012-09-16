@@ -18,9 +18,11 @@ public class ControladorDB {
 	private Cursor cursor;
 	private SQLiteDatabase db;
 	private DBHelper dbHelper;
-
+	private SimpleDateFormat formato;
+	
 	public ControladorDB(Context context) {
 		this.context = context;
+		this.formato = new SimpleDateFormat("yyyy-MM-dd");
 	}
 
 	public void inserir(Emprestimo emprestimo) {
@@ -30,13 +32,12 @@ public class ControladorDB {
 		
 		ContentValues values = new ContentValues();
 		
-		SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");		
 		
 		values.put(DBHelper.EMPRESTIMO_CONTATO ,emprestimo.getContato());
 		values.put(DBHelper.EMPRESTIMO_OBJETO ,emprestimo.getObjeto());
 		values.put(DBHelper.EMPRESTIMO_OBSERVACAO ,emprestimo.getObservacao());
-		values.put(DBHelper.EMPRESTIMO_DT_EMPRESTIMO , parser.format(emprestimo.getDt_emprestimo()) );
-		values.put(DBHelper.EMPRESTIMO_DT_DEVOLUCAO ,  parser.format(emprestimo.getDt_devolucao()) );
+		values.put(DBHelper.EMPRESTIMO_DT_EMPRESTIMO , formato.format(emprestimo.getDt_emprestimo()) );
+		values.put(DBHelper.EMPRESTIMO_DT_DEVOLUCAO ,  formato.format(emprestimo.getDt_devolucao()) );
 		values.put(DBHelper.EMPRESTIMO_ENTREGUE , emprestimo.isEntregue() );
 
 		db.insert(DBHelper.NOME_TABELA, null, values);
@@ -73,12 +74,10 @@ public class ControladorDB {
 		} else {
 			cursor.moveToFirst();
 			
-			emprestimo.setId( new Integer((int)cursor.getLong(0) ));
-			emprestimo.setContato( cursor.getString(1) );
-			emprestimo.setObjeto( cursor.getString(2) );
-			emprestimo.setObservacao( cursor.getString(3) );
-			
-			SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+			emprestimo.setId( 		cursor.getLong(cursor.getColumnIndex(DBHelper.EMPRESTIMO_ID)) );
+			emprestimo.setContato( 	cursor.getString(cursor.getColumnIndex(DBHelper.EMPRESTIMO_CONTATO)) );
+			emprestimo.setObjeto( 	cursor.getString(cursor.getColumnIndex(DBHelper.EMPRESTIMO_OBJETO)) );
+			emprestimo.setObservacao( cursor.getString(cursor.getColumnIndex(DBHelper.EMPRESTIMO_OBSERVACAO)) );
 			
 			try {
 				emprestimo.setDt_emprestimo(formato.parse( cursor.getString(cursor.getColumnIndex(DBHelper.EMPRESTIMO_DT_EMPRESTIMO)) ) );
@@ -123,12 +122,10 @@ public class ControladorDB {
 			
 			Emprestimo emprestimo = new Emprestimo();
 			
-			emprestimo.setId( new Integer((int)cursor.getLong(cursor.getColumnIndex(DBHelper.EMPRESTIMO_ID)) ));
+			emprestimo.setId( cursor.getLong(cursor.getColumnIndex(DBHelper.EMPRESTIMO_ID)));
 			emprestimo.setContato( cursor.getString( cursor.getColumnIndex(DBHelper.EMPRESTIMO_CONTATO)) ) ;
 			emprestimo.setObjeto( cursor.getString( cursor.getColumnIndex(DBHelper.EMPRESTIMO_OBJETO)) ) ;
 			emprestimo.setObservacao( cursor.getString( cursor.getColumnIndex(DBHelper.EMPRESTIMO_OBSERVACAO) ) );
-			
-			SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
 			
 			try {
 				emprestimo.setDt_emprestimo(formato.parse( cursor.getString(cursor.getColumnIndex(DBHelper.EMPRESTIMO_DT_EMPRESTIMO) ) ) );
@@ -164,11 +161,7 @@ public class ControladorDB {
 		cursor = db.query(DBHelper.NOME_TABELA, new String[]{ 
 				DBHelper.EMPRESTIMO_ID,
 				DBHelper.EMPRESTIMO_CONTATO,
-				DBHelper.EMPRESTIMO_OBJETO,
-				DBHelper.EMPRESTIMO_OBSERVACAO,
-				DBHelper.EMPRESTIMO_DT_EMPRESTIMO,
-				DBHelper.EMPRESTIMO_DT_DEVOLUCAO,
-				DBHelper.EMPRESTIMO_ENTREGUE }, DBHelper.EMPRESTIMO_ENTREGUE + "= 0", null, null, null, DBHelper.EMPRESTIMO_DT_DEVOLUCAO + " ASC");
+				DBHelper.EMPRESTIMO_OBJETO }, DBHelper.EMPRESTIMO_ENTREGUE + "= 0", null, null, null, DBHelper.EMPRESTIMO_DT_DEVOLUCAO + " ASC");
 							//db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy);
 		
 		cursor.moveToFirst();
@@ -178,9 +171,9 @@ public class ControladorDB {
 			
 			Emprestimo emprestimo = new Emprestimo();
 			
-			emprestimo.setId(		cursor.getInt	(0));
-			emprestimo.setContato(	cursor.getString(1));
-			emprestimo.setObjeto(	cursor.getString(2));
+			emprestimo.setId(		cursor.getInt	(cursor.getColumnIndex(DBHelper.EMPRESTIMO_ID)));
+			emprestimo.setContato(	cursor.getString(cursor.getColumnIndex(DBHelper.EMPRESTIMO_CONTATO)));
+			emprestimo.setObjeto(	cursor.getString(cursor.getColumnIndex(DBHelper.EMPRESTIMO_OBJETO)));
 			
 			lista.add(emprestimo);
 			
